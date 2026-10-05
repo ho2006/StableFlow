@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Reproducible Ethereum USDC and USDT funds-flow research, with PyTorch forecasting and inspectable evidence.">
+  <title>StableFlow · Ethereum research</title>
+  <style>__STYLES__</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to research</a>
+  <aside class="sidebar" aria-label="Research navigation">
+    <a class="brand" href="#overview" aria-label="StableFlow home"><span class="brand-mark">sf<span>↗</span></span><span>StableFlow<small>ON-CHAIN RESEARCH</small></span></a>
+    <div class="sidebar-caption">RESEARCH WORKSPACE</div>
+    <nav role="tablist" aria-label="Research sections" aria-orientation="vertical">
+      <button id="tab-overview" class="nav-tab active" role="tab" aria-selected="true" aria-controls="overview" data-tab="overview"><span class="nav-icon">◈</span>Overview<span class="nav-index">01</span></button>
+      <button id="tab-flows" class="nav-tab" role="tab" aria-selected="false" aria-controls="flows" tabindex="-1" data-tab="flows"><span class="nav-icon">⇄</span>Flows &amp; Usage<span class="nav-index">02</span></button>
+      <button id="tab-forecast" class="nav-tab" role="tab" aria-selected="false" aria-controls="forecast" tabindex="-1" data-tab="forecast"><span class="nav-icon">⌁</span>Forecast &amp; Anomalies<span class="nav-index">03</span></button>
+      <button id="tab-method" class="nav-tab" role="tab" aria-selected="false" aria-controls="method" tabindex="-1" data-tab="method"><span class="nav-icon">≡</span>Method &amp; Evidence<span class="nav-index">04</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="status-dot"></span>Ethereum · single chain<p>Observe the transfer.<br>Verify the interpretation.</p></div>
+    <div class="sidebar-footer">OPEN RESEARCH / V1.0<span>SQL → Python → PyTorch</span></div>
+  </aside>
+  <main id="main">
+    <header class="topbar"><span>Research / <strong id="breadcrumb">Overview</strong></span><div class="topbar-right"><span class="network-pill"><span class="status-dot"></span>ETHEREUM MAINNET</span><a href="downloads/evidence.json" download>Evidence pack <span aria-hidden="true">↗</span></a></div></header>
+    <div class="page-content">
+      <div id="evidence-warning" class="evidence-warning" role="note">__EVIDENCE_WARNING__</div>
+      <section class="research-hero" aria-labelledby="page-title">
+        <div><div class="eyebrow">STABLECOIN RESEARCH / ETHEREUM</div><h1 id="page-title">Follow the flow.</h1><p class="hero-description">Where stablecoins move, how they are used, and when their patterns change. An inspectable view of USDC and USDT.</p></div>
+        <div class="hero-stamp"><span>DATA WINDOW</span><strong id="data-window">Awaiting snapshot</strong><small>UTC · exclusive dataset end</small><span id="snapshot-kind" class="tiny-pill">PENDING EVIDENCE</span></div>
+      </section>
+      <form class="filterbar" id="filters" aria-label="Research filters">
+        <label>ASSET<select id="token-filter"><option value="USDC">USDC</option><option value="USDT">USDT</option></select></label>
+        <label>FROM <input id="start-filter" type="date" aria-label="Start date, UTC"></label>
+        <label>THROUGH <input id="end-filter" type="date" aria-label="End date inclusive, UTC"></label>
+        <label>CATEGORY<select id="category-filter"><option value="all">All categories</option></select></label>
+        <label class="toggle-label"><input type="checkbox" id="internal-toggle" checked><span>Include internal<br><small>known entity transfers</small></span></label>
+        <button type="button" id="reset-filters" class="text-button">Reset ↻</button>
+      </form>
+      <p id="filter-summary" class="filter-summary" aria-live="polite"></p>
+      <div id="empty-state" class="empty-state" hidden><span class="empty-symbol">◎</span><h2>Research starts with evidence.</h2><p>A verified snapshot has not been loaded. Connect BigQuery or import a documented export, then reproduce the analysis. No research findings are inferred from an empty dataset.</p></div>
+
+      <section id="overview" class="view" role="tabpanel" aria-labelledby="tab-overview">
+        <div class="stat-grid">
+          <article class="stat-card"><div class="stat-label">TRANSFER VOLUME <span class="info" title="Each eligible transfer is counted once. Native token units, not USD.">ⓘ</span></div><strong id="stat-volume">—</strong><div id="stat-volume-detail" class="stat-detail">Native token units</div><div class="stat-accent"></div></article>
+          <article class="stat-card"><div class="stat-label">LABELED VOLUME SHARE</div><strong id="stat-coverage">—</strong><div class="stat-detail">At least one verified endpoint</div><div class="stat-accent muted"></div></article>
+          <article class="stat-card"><div class="stat-label">OBSERVED TRANSFERS</div><strong id="stat-count">—</strong><div id="stat-count-detail" class="stat-detail">Eligible events, counted once</div><div class="stat-accent light"></div></article>
+          <article class="stat-card"><div class="stat-label">FORECAST EXPERIMENT</div><strong class="status-value" id="stat-model">Pending</strong><div id="stat-model-detail" class="stat-detail">Frozen evaluation, CPU PyTorch</div><div class="stat-accent gold"></div></article>
+        </div>
+        <article class="panel trend-panel"><div class="panel-heading"><div><span class="eyebrow">01 / CAPITAL ACTIVITY</span><h2>Daily transfer activity</h2><p>Eligible transfers across the selected endpoints, counted once.</p></div><button class="download-button" data-download="daily">↓ Export CSV</button></div><div id="volume-chart" class="chart" aria-label="Daily transfer volume"></div><div class="panel-foot"><span><i class="legend-dot teal"></i> Transfer volume <i class="legend-dot pale"></i> Labeled portion</span><span id="trend-scope">Native units · UTC</span></div></article>
+        <div class="two-col"><article class="panel"><div class="panel-heading"><div><span class="eyebrow">02 / RESEARCH READOUT</span><h2>What the evidence says</h2></div><span class="subtle-badge">DESCRIPTIVE</span></div><div id="findings" class="findings"></div><p class="quiet-note">Coverage is limited to verified addresses. Unknown endpoints remain visible; addresses are not people.</p></article><article class="panel"><div class="panel-heading"><div><span class="eyebrow">03 / DATA ACCOUNTABILITY</span><h2>Coverage &amp; quality</h2></div></div><dl id="quality-list" class="quality-list"></dl><div class="note-block">Current labels are replayed over history. This is a fixed-label analysis, not a reconstruction of what was known at the time.</div></article></div>
+      </section>
+
+      <section id="flows" class="view" role="tabpanel" aria-labelledby="tab-flows" hidden>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">01 / FLOW MAP</span><h2>From one endpoint to another</h2><p>Category-to-category movement. Unknown endpoints stay in the picture.</p></div><button class="download-button" data-download="edges">↓ Export flows</button></div><div id="sankey-chart" class="chart sankey" aria-label="Stablecoin funds flow Sankey diagram"></div><div class="panel-foot"><span>Source category → destination category</span><span id="sankey-scope">Native units · UTC</span></div></article>
+        <div class="two-col"><article class="panel"><div class="panel-heading"><div><span class="eyebrow">02 / OBSERVED USE</span><h2>Protocol touchpoints</h2><p>Share touching each category; categories can overlap.</p></div></div><div id="usage-chart" class="chart compact" aria-label="Protocol-related transfer shares"></div><p class="quiet-note">A protocol transfer does not establish a swap, loan, payment or customer deposit.</p></article><article class="panel"><div class="panel-heading"><div><span class="eyebrow">03 / TRANSFER LEDGER</span><h2>Inspect the movement</h2></div></div><div class="table-wrap"><table id="flows-table"><caption class="sr-only">Selected category pairs and native transfer amounts</caption><thead><tr><th>From</th><th>To</th><th class="numeric">Amount</th><th class="numeric">Events</th></tr></thead><tbody></tbody></table></div><p id="internal-impact" class="quiet-note"></p></article></div>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">04 / CATEGORY BOUNDARIES</span><h2>Hourly inflows &amp; outflows</h2><p id="hourly-scope">Choose a category to inspect its boundary flows.</p></div><button class="download-button" data-download="hourly">↓ Export hours</button></div><div id="hourly-chart" class="chart" aria-label="Hourly category boundary inflows and outflows"></div><p class="quiet-note">Same-category transfers do not enter boundary flow. Unique active addresses are measured by hour and are never added together to infer daily users.</p></article>
+      </section>
+
+      <section id="forecast" class="view" role="tabpanel" aria-labelledby="tab-forecast" hidden>
+        <div class="model-note"><span class="tiny-pill">PYTORCH · GRU</span><p>One shared GRU. One-hour-ahead forecasts. Anomalies are investigated after the hour ends.</p><span id="experiment-status" class="subtle-badge">PENDING</span></div>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">01 / EXPECTATION VS OBSERVATION</span><h2>What changed from the expected flow?</h2><p id="forecast-scope">Predictions will appear after a frozen experiment is completed.</p></div><label class="inline-select">DIRECTION<select id="direction-filter"><option value="inflow">Inflow</option><option value="outflow">Outflow</option></select></label></div><div id="forecast-chart" class="chart" aria-label="Observed and predicted stablecoin category flow"></div><div class="panel-foot"><span><i class="legend-dot navy"></i> Actual <i class="legend-dot teal"></i> GRU · seed 42 <i class="legend-dot gold"></i> Best baseline</span><button class="text-button" data-download="predictions">↓ Export predictions</button></div></article>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">02 / OUT-OF-TIME EVALUATION</span><h2>Does the model earn its complexity?</h2><p>Metrics recalculated on the selected test hours. Lower is better.</p></div><button class="download-button" data-download="metrics">↓ Export metrics</button></div><div class="table-wrap"><table id="metrics-table"><caption class="sr-only">Forecast error by model, category and direction</caption><thead><tr><th>Model</th><th>Category</th><th>Direction</th><th class="numeric">MAE</th><th class="numeric">WAPE</th><th class="numeric">Log-MAE</th></tr></thead><tbody></tbody></table></div><p class="quiet-note">All models share valid target hours. Zero-denominator WAPE is undefined. A stronger neural network result is not assumed. <a href="downloads/metrics.csv" download>Download all frozen benchmark metrics ↗</a></p><h3 class="seed-heading">Seed stability · full frozen test period</h3><p class="quiet-note">The selected asset and category apply below; the date filter does not truncate these saved full-period scores.</p><div class="table-wrap"><table id="seeds-table"><caption class="sr-only">GRU seed variability on the full frozen test period</caption><thead><tr><th>GRU seed</th><th class="numeric">Macro WAPE</th><th class="numeric">Macro log-MAE</th><th>Role</th></tr></thead><tbody></tbody></table></div></article>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">03 / INVESTIGATION QUEUE</span><h2>Anomalies worth a closer look</h2><p>Adjacent flagged hours are merged. Up to 20 events, ranked by calibrated residual.</p></div></div><div id="anomalies" class="anomaly-list"></div><div class="note-block">A large forecast residual is a prompt for investigation. There is no independent anomaly truth set, so detection accuracy is not reported.</div></article>
+      </section>
+
+      <section id="method" class="view" role="tabpanel" aria-labelledby="tab-method" hidden>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">01 / REPRODUCIBLE BY DESIGN</span><h2>From raw events to a research claim</h2><p>Offline results, explicit assumptions, inspectable evidence.</p></div><a class="download-button" href="downloads/evidence.json" download>↓ Evidence pack</a></div><div class="pipeline"><div><b>01</b><strong>Extract</strong><small>Partitioned SQL<br>Budget checked</small></div><span>→</span><div><b>02</b><strong>Account</strong><small>Integer amounts<br>Verified endpoints</small></div><span>→</span><div><b>03</b><strong>Evaluate</strong><small>Frozen time splits<br>Baseline vs GRU</small></div><span>→</span><div><b>04</b><strong>Investigate</strong><small>Residual events<br>Transaction evidence</small></div></div></article>
+        <div class="two-col"><article class="panel"><div class="panel-heading"><div><span class="eyebrow">02 / ACCOUNTING RULES</span><h2>Know what a number means</h2></div></div><ul class="method-list"><li><strong>One event, one record.</strong> Ethereum chain ID, transaction hash and log index define the unique event.</li><li><strong>Native token units.</strong> USDC and USDT keep their own quantities. No automatic one-dollar conversion.</li><li><strong>Boundary flow.</strong> Inflow crosses into a category; outflow crosses out. Same-category movements remain in the matrix.</li><li><strong>Special events.</strong> Zero-address, self and zero-value events are reported separately, excluded from the main matrix.</li><li><strong>Missing means missing.</strong> Only source-complete hours receive zero values. Data gaps stay null.</li><li><strong>Coverage is partial.</strong> Unknown means insufficient attribution, not an ordinary user or a payment.</li></ul></article><article class="panel"><div class="panel-heading"><div><span class="eyebrow">03 / EXPERIMENT CONTRACT</span><h2>Keep the future out</h2></div></div><dl class="quality-list"><div><dt>Lookback</dt><dd>168 previous hours</dd></div><div><dt>Architecture</dt><dd>1-layer GRU · 32 hidden units</dd></div><div><dt>Objective</dt><dd>Huber loss in log space</dd></div><div><dt>Features</dt><dd>Flow, counts, active addresses, time</dd></div><div><dt>Preprocessing</dt><dd>Training-only log1p + scaling</dd></div><div><dt>Calibration</dt><dd>95th percentile absolute log residual</dd></div><div><dt>Seeds</dt><dd>7 / 42 / 2026; primary 42</dd></div></dl><p id="split-description" class="quiet-note">Training, validation, calibration and final test remain separate.</p></article></div>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">04 / ADDRESS ATTRIBUTION</span><h2>Show the source behind the label</h2><p>Only verified labels enter category accounting. Conflicts remain unknown.</p></div></div><div class="table-wrap"><table id="labels-table"><caption class="sr-only">Address registry and attribution sources</caption><thead><tr><th>Entity / Category</th><th>Ethereum address</th><th>Evidence</th><th>Status</th></tr></thead><tbody></tbody></table></div></article>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">05 / SNAPSHOT PROVENANCE</span><h2>Audit and reproduce</h2></div></div><div id="provenance" class="provenance"></div><pre class="reproduce-code"><code>python -m stableflow reproduce --snapshot path/to/frozen-snapshot
+python -m unittest discover</code></pre><p class="quiet-note">The published site contains generated results. It makes no API requests and trains no model in your browser. Data sources retain their own terms and attribution.</p></article>
+      </section>
+      <footer class="page-footer"><span>STABLEFLOW <strong>Research you can inspect.</strong></span><span>Ethereum / USDC + USDT / UTC</span></footer>
+    </div>
+  </main>
+  <script src="plotly.min.js"></script>
+  <script id="stableflow-data" type="application/json">__DATA__</script>
+  <script>__SCRIPT__</script>
+</body>
+</html>

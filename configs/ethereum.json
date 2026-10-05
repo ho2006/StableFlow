@@ -1,0 +1,17 @@
+{
+  "project_id": null,
+  "location": "US",
+  "dataset": "bigquery-public-data.goog_blockchain_ethereum_mainnet_us",
+  "start": "2025-10-01T00:00:00Z",
+  "end": "2026-10-01T00:00:00Z",
+  "labels_file": "../data/labels.json",
+  "schema_file": null,
+  "schema_map": {},
+  "ledger_file": "../.stableflow-budget.json",
+  "budget_gib": 800,
+  "reserve_gib": 200,
+  "allow_six_month_fallback": true,
+  "evidence_per_month": 20,
+  "evidence_directory": "../data/evidence",
+  "source_license": "Public blockchain facts; public-dataset and source-document terms apply separately."
+}

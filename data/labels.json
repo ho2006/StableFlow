@@ -1,0 +1,242 @@
+[
+  {
+    "retrieved_at": "2026-10-04T14:47:43.054881Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x98c23e9d8f34fefb1b7bd6a91b7ff122f4e16f5c",
+    "entity": "Aave V3 Ethereum",
+    "category": "lending",
+    "source_url": "https://github.com/bgd-labs/aave-address-book/blob/main/src/AaveV3Ethereum.sol",
+    "evidence": "USDC_A_TOKEN from official address book; AToken.transferUnderlyingTo sends the underlying held by this contract. Block-pinned UNDERLYING_ASSET_ADDRESS read returned 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 at 0x18e8dfd.",
+    "evidence_files": [
+      "evidence/AaveV3Ethereum.sol",
+      "evidence/AToken.sol",
+      "evidence/aave-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:47:43.054881Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x23878914efe38d27c4d67ab83ed1b93a74d4086a",
+    "entity": "Aave V3 Ethereum",
+    "category": "lending",
+    "source_url": "https://github.com/bgd-labs/aave-address-book/blob/main/src/AaveV3Ethereum.sol",
+    "evidence": "USDT_A_TOKEN from official address book; AToken.transferUnderlyingTo sends the underlying held by this contract. Block-pinned UNDERLYING_ASSET_ADDRESS read returned 0xdac17f958d2ee523a2206206994597c13d831ec7 at 0x18e8dfd.",
+    "evidence_files": [
+      "evidence/AaveV3Ethereum.sol",
+      "evidence/AToken.sol",
+      "evidence/aave-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:47:43.054881Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0xa3a7b6f88361f48403514059f1f16c8e78d60eec",
+    "entity": "Arbitrum One canonical token bridge",
+    "category": "bridge",
+    "source_url": "https://docs.arbitrum.io/arbitrum-essentials/reference/contract-addresses",
+    "evidence": "Official token-bridge table, Ethereum L1, Arbitrum One column: L1 ERC20 Gateway. Tracks only Ethereum-side transfers; not an estimate of total cross-chain activity.",
+    "evidence_files": [
+      "evidence/arbitrum-addresses.html"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:47:43.054881Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0xcee284f754e854890e311e3280b767f80797180d",
+    "entity": "Arbitrum One canonical token bridge",
+    "category": "bridge",
+    "source_url": "https://docs.arbitrum.io/arbitrum-essentials/reference/contract-addresses",
+    "evidence": "Official token-bridge table, Ethereum L1, Arbitrum One column: L1 Arb-Custom Gateway. Tracks only Ethereum-side transfers; not an estimate of total cross-chain activity.",
+    "evidence_files": [
+      "evidence/arbitrum-addresses.html"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x3416cf6c708da44db2624d63ea0aaef7113527c6",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/USDT,fee=100) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x7858e59e0c01ea06df3af3d20ac7b0003275d4bf",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/USDT,fee=500) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0xee4cf3b78a74affa38c6a926282bcd8b5952818d",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/USDT,fee=3000) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0xbb256c2f1b677e27118b0345fd2b3894d2e6d487",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/USDT,fee=10000) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0xe0554a476a092703abdb3ef35c80e0d76d32939f",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/WETH,fee=100) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/WETH,fee=500) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/WETH,fee=3000) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x7bea39867e4169dbe237d55c8242a8f2fcdcc387",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDC/WETH,fee=10000) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0xc7bbec68d12a0d1830360f8ec58fa599ba1b0e9b",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDT/WETH,fee=100) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x11b815efb8f581194ae79006d24e0d814b7697f6",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDT/WETH,fee=500) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDT/WETH,fee=3000) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  },
+  {
+    "retrieved_at": "2026-10-04T14:39:46.5891361Z",
+    "valid_from": null,
+    "valid_to": null,
+    "verified": true,
+    "address": "0xc5af84701f98fa483ece78af83f11b6c38aca71d",
+    "entity": "Uniswap V3 Ethereum",
+    "category": "dex",
+    "source_url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+    "evidence": "Official Ethereum factory 0x1f98431c8ad98523631ae4a59f267346ea31f984 getPool(USDT/WETH,fee=10000) returned this pool at block 0x18e8ddc; request and unmodified response preserved.",
+    "evidence_files": [
+      "evidence/uniswap-deployments.html",
+      "evidence/uniswap-rpc.json"
+    ]
+  }
+]

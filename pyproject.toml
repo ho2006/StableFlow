@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stableflow"
+version = "0.1.0"
+description = "Reproducible Ethereum stablecoin flows and PyTorch forecasting research"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["duckdb>=1.4,<2", "numpy>=2,<3", "torch>=2.6,<3", "scikit-learn>=1.6,<2", "plotly>=6,<7"]
+
+[project.optional-dependencies]
+fetch = ["google-cloud-bigquery>=3.30,<4", "google-auth>=2,<3"]
+notebook = ["nbformat>=5,<6", "nbclient>=0.10,<1", "ipykernel>=6,<8", "matplotlib>=3.9,<4"]
+
+[tool.setuptools.package-data]
+stableflow = ["*.sql", "*.html", "*.js", "*.css"]
+
+[project.scripts]
+stableflow = "stableflow.__main__:main"

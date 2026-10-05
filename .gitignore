@@ -1,0 +1,15 @@
+.venv/
+.tools/
+__pycache__/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+data/snapshots/
+reports/
+!reports/.gitkeep
+.env
+credentials*.json
+application_default_credentials.json
+.stableflow-budget.json
+.cache/
